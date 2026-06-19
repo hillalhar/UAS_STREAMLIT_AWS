@@ -1,18 +1,3 @@
-"""
-Streamlit app untuk Credit Score Classification.
-Memanggil SageMaker endpoint yang sudah di-deploy lewat boto3.
-
-boto3 membaca kredensial AWS dari:
-  - EC2 instance profile (LabInstanceProfile) jika berjalan di EC2/SageMaker notebook, atau
-  - ~/.aws/credentials jika berjalan secara lokal
-
-Jalankan dengan:
-    streamlit run app_streamlit_aws.py
-
-atau set environment variable jika endpoint/region berbeda:
-    ENDPOINT_NAME=credit-score-endpoint AWS_REGION=us-east-1 streamlit run app_streamlit_aws.py
-"""
-
 import json
 import os
 
@@ -42,7 +27,7 @@ def invoke_endpoint(features: dict) -> dict:
 
 
 st.set_page_config(page_title="Credit Score App", page_icon="💳", layout="centered")
-st.title("💳 Prediksi Credit Score")
+st.title("Prediksi Credit Score")
 st.write(
     "Isi profil finansial nasabah di bawah untuk memprediksi kategori Credit Score "
     "(**Poor**, **Standard**, atau **Good**) melalui SageMaker endpoint."
