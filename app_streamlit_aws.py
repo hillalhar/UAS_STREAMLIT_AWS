@@ -99,8 +99,7 @@ if submit:
         st.subheader("Hasil Prediksi")
 
         label = result["predictions"][0]
-        label_color = {"Good": "green", "Standard": "orange", "Poor": "red"}.get(label, "gray")
-        st.markdown(f"### Credit Score: :{label_color}[**{label}**]")
+        st.markdown(f"### Credit Score: :**{label}**")
 
         if "probabilities" in result:
             st.write("Probabilitas tiap kelas:")
@@ -110,9 +109,7 @@ if submit:
 
     except NoCredentialsError:
         st.error(
-            "AWS credentials tidak ditemukan. "
-            "Jika di EC2/SageMaker, pastikan LabInstanceProfile sudah di-attach. "
-            "Jika lokal, konfigurasi ~/.aws/credentials."
+            "Error Credential aws"
         )
     except ClientError as e:
         st.error(f"AWS error: {e.response['Error'].get('Message', str(e))}")
