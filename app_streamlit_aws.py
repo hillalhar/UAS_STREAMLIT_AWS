@@ -93,7 +93,7 @@ if submit:
         st.subheader("Hasil Prediksi")
 
         label = result["predictions"][0]
-        st.markdown(f"### Credit Score: :**{label}**")
+        st.markdown(f"### Credit Score: **{label}**")
 
         if "probabilities" in result:
             st.write("Probabilitas tiap kelas:")
