@@ -24,15 +24,9 @@ def invoke_endpoint(features: dict) -> dict:
         Body=json.dumps(payload),
     )
     return json.loads(response["Body"].read().decode("utf-8"))
-
-
-st.set_page_config(page_title="Credit Score App", page_icon="💳", layout="centered")
+    
+st.set_page_config(page_title="Credit Score App", layout="centered")
 st.title("Prediksi Credit Score")
-st.write(
-    "Isi profil finansial nasabah di bawah untuk memprediksi kategori Credit Score "
-    "(**Poor**, **Standard**, atau **Good**) melalui SageMaker endpoint."
-)
-
 with st.form("prediction_form"):
     col1, col2 = st.columns(2)
 
