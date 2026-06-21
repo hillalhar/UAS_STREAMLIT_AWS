@@ -24,7 +24,8 @@ def invoke_endpoint(features: dict) -> dict:
         Body=json.dumps(payload),
     )
     return json.loads(response["Body"].read().decode("utf-8"))
-    
+
+
 st.set_page_config(page_title="Credit Score App", layout="centered")
 st.title("Prediksi Credit Score")
 with st.form("prediction_form"):
