@@ -70,7 +70,7 @@ with st.form("prediction_form"):
         outstanding_debt = st.number_input("Outstanding Debt", value=500.0)
         amount_invested = st.number_input("Amount Invested Monthly", value=100.0)
 
-    submit = st.form_submit_button("🔍 Prediksi", use_container_width=True)
+    submit = st.form_submit_button("Prediksi", use_container_width=True)
 
 if submit:
     features = {
